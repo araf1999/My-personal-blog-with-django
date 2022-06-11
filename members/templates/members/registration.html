@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% csrf_token %}
+{{form}}
+
+<button>Login</button>
+
+{% endblock content %}

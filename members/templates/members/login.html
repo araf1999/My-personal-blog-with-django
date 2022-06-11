@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h1>login page!</h1>
+{% endblock title %}
+
+
+{% block content %}
+    Login here
+
+    <form method= "post" class="form.group">
+
+        {% csrf_token %}
+        {{form}}
+    </form>
+    <button type="submit" class="btn btn-success">Login</button>
+
+{% endblock content %}

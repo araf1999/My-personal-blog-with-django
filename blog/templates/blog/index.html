@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Home
+{% endblock %}
+{% block css_files %}
+
+<link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %} 
+
+
+
+
+{% block content %}
+{% comment %} <header id="main-nav">
+<h1><a href="">Alireza's Blog</a></h1>
+
+<nav>
+<a href="">All posts</a>
+</nav>
+
+
+</header> {% endcomment %}
+
+<section id="welcome">
+
+<div class="container">
+    <img id="image" src="{% static "blog/images/image.jpg" %}" alt="my university image"
+    width="100px" >
+    <div class="centered">
+    <img id="myImage" src="{% static "blog/images/myImage.jpg" %}" alt="alireza-the author of blog"
+     width="100px" >
+    
+    <h1 ><div class="title">Welcome to Alireza's blog</div></h1>
+    <p class="para">
+        Hi; I am Alireza Akhlaghifard and i want to learn Django coding(:
+        <br>
+        <br>
+        I born in sarab at 1999,a small city at the north-west of the Iran.and when i was 18 years old i
+         came to tehran(capital of Iran) for university.
+         <br>
+         <br>
+        I'm studing petroleum engineering and Ecinomics minor field atsharif university of technologhy!
+        <br><br>
+        my favorate sport is volleyball and i am a member of our university team
+        
+    </p>
+    </div>
+</div >
+</section>
+
+<section >
+    <div class="mainTitle"><h2 >My Collected posts</h2></div>
+    <ul class="skillsAndHobbies">
+        {% for post in posts %}
+            {% include "blog/includes/post.html" %}
+        {% endfor %}
+        
+
+    </ul>
+</section>
+
+
+
+
+
+{% endblock %}

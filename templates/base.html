@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> {% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static "app.css" %}">
+        {% block css_files %}{% endblock  %}
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        
+    </head>
+    <body>
+    <header id="main">
+        <nav class="navigation-bar">
+            <h1 class="sitenavmem"><a class="links" href="{% url 'first_page' %}">Home</a></h1>
+            <h1 class="sitenavmem"><a class="links" href={% url 'posts' %} >All posts</a></h1>
+            <h1 class="sitenavmem"><a class="links" href={% url 'about' %}>About me</a></h1>
+            <h1 class="sitenavmem"><a class="links" href={% url 'contactMe' %}>Contact me</a></h1>
+            <h1 class="sitenavmem"><a class="links" href={% url 'register' %}>Register</a></h1>
+            <h1 class="sitenavmem"><a class="links" href={% url 'login' %}>Login</a></h1>
+        </nav>
+        
+
+    </header >
+    {% block content %}{% endblock %}
+        <script src="" async defer></script>
+    </body>
+
+    <br class="brrr">
+
+
+    <footer class="footer">
+        
+        <br>
+        <br>
+        <br>
+        <p>Author:Alireza Akhlaghifard</p>
+        <p>I use Html,Css and django for creating this website</p>
+
+    </footer>
+</html>

@@ -1,0 +1,20 @@
+{% block css_files %}
+{% load static %}
+<link rel="stylesheet" href="{% static "blog/post.css" %}">
+{% endblock css_files %}
+
+<li>
+            <article class="posts"> 
+                <a href="{% url "post_details" post.slug %}">
+
+                    {% if post.image %}
+                    <img class="img"  src="{{post.image.url}}" alt="post.title" width="600" height="400">
+                    {% endif %}
+                    <div class="textunderpost">
+                        <h1 class="posth">{{post.title}}</h1>
+                        <p class="posth">{{post.excerpt}}</p>
+                    </div>
+                </a>
+
+            </article>
+        </li>

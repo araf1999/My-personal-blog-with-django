@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{post.title}}
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/all-posts.css'%}">
+<link rel="stylesheet" href="{% static "app.css" %}">
+<link rel="stylesheet" href="{% static "blog/post-detail.css" %}">
+
+{% endblock css_files %}
+
+
+{% block content %}
+
+<div>
+{% for tg in post_tags %}
+    <span>{{tag.caption}}</span>
+
+{% endfor %}
+</div>
+
+
+<section>
+    
+    <article>
+        <img class="detImg" src="{{post.image.url}}" alt={{post.title}}>
+        <div>
+            {{all_posts.desc}}
+        </div>
+    </article>
+</section>
+<h2>{{post.title}}</h2>
+<main>
+    <p>{{all_posts.desc}}</p>
+        <p>{{all_posts.desc}}
+            </p>
+            <p>{{post.desc}}</p>
+</main>
+
+<div>
+    <form id="comment-form" action="{% url 'post_details' post.slug %}" method="post">
+
+    {% csrf_token %}
+    {% for field  in comment_form %}
+        <div class="form-control">
+        {{field.label}}
+        {{field}}
+        {{field.errors}}
+        </div>
+    
+    
+    {% endfor %}
+        <button>save all</botton>
+    </form>
+</div>
+{% endblock %}
